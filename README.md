@@ -1,68 +1,17 @@
-Project Overview
-StrongHold is a console-based kingdom management simulation game written in C++. It allows players to rule and develop a medieval stronghold by managing its population, army, economy, resources, and events. The game encourages strategic decision-making through a menu-driven interface and showcases principles of object-oriented programming (OOP), inheritance, encapsulation, and file handling.
-Technologies Used
-•	Language: C++
-•	Concepts: OOP (Inheritance, Polymorphism), File I/O, Encapsulation
-•	Compiler: Compatible with any standard C++ compiler (e.g., g++, MSVC)
-•	IDE (optional): Code::Blocks, Visual Studio, or any C++ IDE of choice
-Project Structure and Class Overview
-The project is modular and structured across several classes, each representing a key system of the game:
- Person (Base Class)
-•	Holds basic personal information like name and age.
-•	Designed for possible future extensions like character management.
- SocialClass
-•	Represents groups such as peasants, merchants, and nobles.
-•	Tracks population and status of each class.
-Population
-•	Tracks total population and happiness.
-•	Simulates population changes.
-•	Manages social distribution.
-•	Implements file save/load functionality.
- Army
-•	Manages soldier count, morale, and food supply.
-•	Handles recruitment and training.
-•	Interacts with the Population system.
-•	Save/load state from files.
- Economy
-•	Controls taxation and treasury.
-•	Introduces inflation effects.
-•	Provides treasury status and transactions.
-Bank
-•	Manages loans and audits treasury.
-•	Detects fraud and tracks loans issued.
-•	Interfaces with Economy for financial simulations.
- ResourceManager
-•	Tracks and manages core resources: food, wood, stone, iron.
-•	Allows gathering and consumption of resources.
-•	Handles fixed resource consumption.
-•	Includes persistence through file operations.
- EventManager
-•	Triggers random events affecting multiple systems.
-•	Events include: famine, disease, war, betrayal, and earthquakes.
- Leader (Abstract Class)
-•	Base class for different ruler types.
-•	Defines a common interface to impose policies.
- King and Tyrant (Derived Classes)
-•	Implement specific leadership styles.
-•	Apply unique policies to influence army and economy.
-Gameplay Flow
-The game runs through a menu-driven interface:
+StrongHold is a console-based kingdom management simulation game written in C++. It allows players to rule and develop a medieval stronghold by managing its population, army, economy, resources, and random events. The game provides a strategic decision-making experience through a menu-driven interface and demonstrates the core principles of object-oriented programming (OOP), such as inheritance, encapsulation, polymorphism, and file handling for data persistence.
 
-1. View Kingdom Overview
-2. Simulate Population Changes
-3. Recruit and Train Army
-4. Manage Economy (Taxation, Treasury)
-5. Handle Resource Operations
-6. Trigger Random Event
-7. Save Game to File
-8. Load Game from File
-9. Exit
+The project is developed using the C++ programming language and is compatible with any standard C++ compiler, including g++ and MSVC. It can be run in any C++-friendly IDE such as Code::Blocks, Visual Studio, or others. Core concepts utilized in the development of this project include object-oriented design, file input/output operations, and encapsulation of functionality within modular classes.
 
-File Handling
-Each major class (Population, Army, Economy, ResourceManager, Bank) includes:
-•	saveToFile(): Saves current object state.
-•	loadFromFile(): Restores object state.
-This enables players to save and resume progress.
+The game is structured around a set of interconnected classes that each represent a system in the game. The Person class is a base class that holds basic information such as name and age and is designed to allow for future extensions such as more detailed character interactions. The SocialClass class is used to categorize the population into peasants, merchants, and nobles and keeps track of their respective counts and status.
 
+The Population class handles the simulation of population changes, tracks happiness levels, and enables saving and loading of population data from files. The Army class manages the recruitment and training of soldiers, tracks morale and food supply, and integrates with the population system. The Economy class manages the kingdom’s finances, including taxation, treasury management, and inflation, and works closely with the Bank class, which handles financial audits, loan issuance, and fraud detection.
 
+The ResourceManager class oversees core resources like food, wood, stone, and iron. It includes functionalities to gather, consume, and manage resources, and supports file-based persistence. The EventManager class can trigger random in-game events that affect the population, army, economy, or resources. These events include famine, disease, war, betrayal, and natural disasters such as earthquakes.
 
+The Leader class is an abstract class that serves as a blueprint for different types of rulers. Derived classes such as King and Tyrant implement specific leadership policies that influence the kingdom’s army and economy differently, offering a variety of gameplay strategies.
+
+The game operates through a clear, interactive menu interface that provides players with multiple options: view kingdom overview, simulate population changes, manage the army, handle economic decisions, manage resources, trigger random events, save the game to a file, load a game from a file, or exit. Each of these options corresponds to specific class methods and system interactions.
+
+One of the key features of StrongHold is its use of file handling to allow the player to save their game state and load it later. Each major system — Population, Army, Economy, ResourceManager, and Bank — has its own saveToFile() and loadFromFile() functions that write to or read from external files. This provides a persistent and dynamic gameplay experience.
+
+StrongHold showcases a well-structured, modular approach to C++ game development and offers numerous opportunities for expansion in future versions, such as adding combat systems, diplomacy, a graphical interface, or additional event types.
